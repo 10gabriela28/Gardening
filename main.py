@@ -1,6 +1,8 @@
 
 # creds for the song: https://www.youtube.com/watch?v=8bch0KYfeOM
 
+# original drawings for the assets coming soon :)
+
 import pygame
 from pygame.locals import *
 import json
