@@ -15,23 +15,26 @@ pygame.display.set_caption("Gardening")
 
 clock = pygame.time.Clock()
 
-bg = pygame.image.load(r"C:\Users\Gabri\OneDrive\Pictures\Projects-\COLLEGE\FMI\licenta\minigames\Gardening\assets\placeholder.png").convert()
+update = pygame.image.load(r"assets\future_update.png")
+update_large = pygame.transform.scale(update, (487, 47))
+
+bg = pygame.image.load(r"assets\placeholder.png").convert()
 bg_large = pygame.transform.scale(bg, (1000, 600))
 
 xtree, ytree = 170, 170
-tree = pygame.image.load(r"C:\Users\Gabri\OneDrive\Pictures\Projects-\COLLEGE\FMI\licenta\minigames\Gardening\assets\tree.png").convert_alpha()
+tree = pygame.image.load(r"assets\tree.png").convert_alpha()
 tree_large = pygame.transform.scale(tree, (xtree, ytree))
 tree_coords = (45, 50)
 tree_rect = tree_large.get_rect(topleft=tree_coords)
 
 xflowers, yflowers = 100, 100
-flowers = pygame.image.load(r"C:\Users\Gabri\OneDrive\Pictures\Projects-\COLLEGE\FMI\licenta\minigames\Gardening\assets\flower.png").convert_alpha()
+flowers = pygame.image.load(r"assets\flower.png").convert_alpha()
 flowers_large = pygame.transform.scale(flowers, (xflowers, yflowers))
 flowers_coords = (70, 300)
 flowers_rect = flowers_large.get_rect(topleft=flowers_coords)
 
 xbush, ybush = 150, 150
-bush = pygame.image.load(r"C:\Users\Gabri\OneDrive\Pictures\Projects-\COLLEGE\FMI\licenta\minigames\Gardening\assets\bush.png").convert_alpha()
+bush = pygame.image.load(r"assets\bush.png").convert_alpha()
 bush_large = pygame.transform.scale(bush, (xbush, ybush))
 bush_coords = (50, 450)
 bush_rect = bush_large.get_rect(topleft=bush_coords)
@@ -81,6 +84,7 @@ while running:
     screen.blit(tree_large, tree_coords)
     screen.blit(flowers_large, flowers_coords)
     screen.blit(bush_large, bush_coords)
+    screen.blit(update_large, (250, 550))
 
     if moving and active_surface and active_rect:
         screen.blit(active_surface, active_rect)
